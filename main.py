@@ -10,5 +10,7 @@ MONGO_PASSWORD = os.environ.get("MONGO_DB_PASSWORD")
 MONGO_DB_USERNAME = os.environ.get("MONGO_DB_USERNAME")
 
 load_dotenv()
-client = pymongo.MongoClient(f"mongodb+srv://{MONGO_DB_USERNAME}:{MONGO_PASSWORD}@cluster25583.uxocfmt.mongodb.net/?retryWrites=true&w=majority", server_api=ServerApi('1'))
+client = MongoClient(f"mongodb+srv://{MONGO_DB_USERNAME}:{MONGO_PASSWORD}@cluster25583.uxocfmt.mongodb.net/?retryWrites=true&w=majority")
 db = client.test
+
+print(db)
